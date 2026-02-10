@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dqc5etqao77qp"]
 
+[ext_resource type="Script" uid="uid://xhx1kfvdtoiy" path="res://scripts/main_game.gd" id="1_d2op2"]
 [ext_resource type="Texture2D" uid="uid://dvddv74p8wmng" path="res://textures/icon.svg" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c2qghk8ky651o" path="res://scenes/ui/settings_menu.tscn" id="2_72e8q"]
 
 [node name="MainGame" type="Node2D" unique_id=126495794]
+script = ExtResource("1_d2op2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2115478363]
 position = Vector2(640, 360)
 texture = ExtResource("1_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=541867085]
+
+[node name="SettingsMenu" parent="CanvasLayer" unique_id=1325957341 instance=ExtResource("2_72e8q")]
+visible = false
+show_quit_to_menu_button = true

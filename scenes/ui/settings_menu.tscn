@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://c2qghk8ky651o"]
+
+[ext_resource type="Script" uid="uid://c2u5ubgua2u80" path="res://scripts/ui/settings_menu.gd" id="1_qwcqe"]
+
+[node name="SettingsMenu" type="Control" unique_id=1325957341]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwcqe")
+metadata/_edit_group_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=76844216]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=644187335]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer" unique_id=1512852184]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=29933944]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1805580894]
+layout_mode = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=485443028]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Master Volume"
+
+[node name="ActualMasterVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=423621792]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "100%"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1779696832]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=820949252]
+layout_mode = 2
+
+[node name="SoundEffectsVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1654417635]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sound Effects Volume"
+
+[node name="ActualSoundEffectsVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1452919563]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "100%"
+
+[node name="SoundEffectsVolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=579395475]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1721337777]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=948458857]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music Volume"
+
+[node name="ActualMusicVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=990459713]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "100%"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=859970514]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer" unique_id=502981386]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Quit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/SoundEffectsVolumeSlider" to="." method="_on_sound_effects_volume_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
