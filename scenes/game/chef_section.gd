@@ -25,11 +25,27 @@ func get_current_recipe() -> Recipe:
 	return recipe
 
 func _process(delta: float) -> void:
-	if dragging_ingredient:
+	if not dragging_ingredient:
+		return
+	
+	dragging_texture.global_position = get_viewport().get_mouse_position() - dragging_texture.size * 0.5
+	
+	# Code for snapping the dragging texture to the nearest IngredientSlot
+	return
+	if not highlighted_slot or highlighted_slot.is_static:
 		dragging_texture.global_position = get_viewport().get_mouse_position() - dragging_texture.size * 0.5
+	else:
+		var highlight_center = highlighted_slot.global_position
+		highlight_center += highlighted_slot.size * 0.5
+		dragging_texture.global_position = highlight_center - dragging_texture.size * 0.5
 
 # Drop ingredient on background component
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	if not dragging_ingredient:
+		return true
+	
+	_on_ingredient_slot_drag_step(drag_from_slot, null);
+	
 	return true
 	
 # Drop ingredient on background component
@@ -64,18 +80,20 @@ func _on_ingredient_slot_drag_step(drag_from: IngredientSlot, drag_to: Ingredien
 		highlighted_slot.set_highlight(false);
 		
 	highlighted_slot = drag_to;
-	highlighted_slot.set_highlight(true)
+	if highlighted_slot:
+		highlighted_slot.set_highlight(true)
 
 # IngredientSlot finished being dragged
 func _on_ingredient_slot_drag_end(drag_from: IngredientSlot, drag_to: IngredientSlot) -> void:
 	if not dragging_ingredient:
 		return
 	
-	if drag_from == drag_to:
-		drag_from.set_ingredient(dragging_ingredient)
-	else:
-		drag_from.set_ingredient(drag_to.ingredient)
-		drag_to.set_ingredient(dragging_ingredient)
+	if not drag_to.is_static:
+		if drag_from == drag_to:
+			drag_from.set_ingredient(dragging_ingredient)
+		else:
+			drag_from.set_ingredient(drag_to.ingredient)
+			drag_to.set_ingredient(dragging_ingredient)
 		
 	reset()
 	
