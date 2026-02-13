@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddlhvc5wptjte"]
+[gd_scene format=3 uid="uid://bym8w1oi7buob"]
 
 [ext_resource type="Script" uid="uid://du4k2yplnio8k" path="res://scenes/game/chef_section.gd" id="1_17vxs"]
 [ext_resource type="PackedScene" uid="uid://co5kdkfssw80f" path="res://scenes/game/ingredient_slot.tscn" id="2_fisco"]
