@@ -33,6 +33,7 @@ window/size/viewport_height=720
 
 folder_colors={
 "res://audio/": "purple",
+"res://resources/": "red",
 "res://scenes/": "green",
 "res://scripts/": "yellow",
 "res://shaders/": "orange",
