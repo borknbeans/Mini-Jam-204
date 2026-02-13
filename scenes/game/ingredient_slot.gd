@@ -1,15 +1,27 @@
-extends Panel
+class_name IngredientSlot extends Panel
 
-signal drag_start
-signal drag_step
-signal drag_end(drag_from: Panel, drag_to: Panel)
+@onready var texture_rect: TextureRect = $TextureRect
+@export var ingredient: Ingredient
+
+signal drag_start(drag_from: IngredientSlot)
+signal drag_step(drag_from: IngredientSlot, drag_to: IngredientSlot)
+signal drag_end(drag_from: IngredientSlot, drag_to: IngredientSlot)
+
+func update_ingredient() -> void:
+	if not ingredient:
+		texture_rect.texture = null
+	else:
+		texture_rect.texture = ingredient.icon
+		
+func _ready() -> void:
+	update_ingredient()
 
 func _get_drag_data(at_position: Vector2) -> Variant:
-	drag_start.emit()
+	drag_start.emit(self)
 	return self
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	drag_step.emit()
+	drag_step.emit(data, self)
 	return true
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:

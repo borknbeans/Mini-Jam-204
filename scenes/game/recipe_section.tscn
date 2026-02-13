@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://du4k2yplnio8k" path="res://scenes/game/recipe_section.gd" id="1_p8y0s"]
 [ext_resource type="PackedScene" uid="uid://co5kdkfssw80f" path="res://scenes/game/ingredient_slot.tscn" id="2_k6gmi"]
+[ext_resource type="Resource" uid="uid://bpp6d204eiwi6" path="res://resources/ingredients/ingredient_1.tres" id="3_k6gmi"]
+[ext_resource type="Resource" uid="uid://ulfteikt4gvi" path="res://resources/ingredients/ingredient_4.tres" id="4_h0vi5"]
 
 [node name="Control" type="Control" unique_id=334321247]
 layout_mode = 3
@@ -47,7 +49,44 @@ theme_override_constants/separation = 8
 [node name="IngredientSlot1" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=803735502 instance=ExtResource("2_k6gmi")]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+ingredient = ExtResource("3_k6gmi")
+
+[node name="IngredientSlot2" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=999976015 instance=ExtResource("2_k6gmi")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+ingredient = ExtResource("4_h0vi5")
+
+[node name="IngredientSlot3" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=1640110097 instance=ExtResource("2_k6gmi")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="IngredientSlot4" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=327632551 instance=ExtResource("2_k6gmi")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="IngredientSlot5" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=878826187 instance=ExtResource("2_k6gmi")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="IngredientSlot6" parent="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer" unique_id=2065166852 instance=ExtResource("2_k6gmi")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 
 [connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
 [connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
 [connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot6" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot6" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot6" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
