@@ -3,6 +3,7 @@ class_name IngredientSlot extends Panel
 @onready var texture_panel: IngredientTexturePanel = $TexturePanel
 @onready var texture_rect: TextureRect = $TexturePanel/TextureRect
 @export var ingredient: Ingredient
+@export var count: int = 0
 @export var is_static: bool = false
 
 signal drag_start(drag_from: IngredientSlot)
@@ -37,4 +38,5 @@ func set_ingredient(new_ingredient: Ingredient) -> void:
 		return
 		
 	ingredient = new_ingredient
+	count = 1 if ingredient else 0
 	update_ingredient()
