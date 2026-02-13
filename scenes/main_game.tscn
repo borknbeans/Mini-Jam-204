@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://xhx1kfvdtoiy" path="res://scripts/main_game.gd" id="1_d2op2"]
 [ext_resource type="Texture2D" uid="uid://dvddv74p8wmng" path="res://textures/icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c2qghk8ky651o" path="res://scenes/ui/settings_menu.tscn" id="2_72e8q"]
+[ext_resource type="Script" uid="uid://e41oj3gjwnb7" path="res://scripts/drink_manager.gd" id="4_0rdsr"]
+[ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="5_o6v7o"]
+[ext_resource type="Resource" uid="uid://bpp6d204eiwi6" path="res://resources/ingredients/ingredient_1.tres" id="6_wjob3"]
+[ext_resource type="Resource" uid="uid://y5up24341v1x" path="res://resources/ingredients/ingredient_2.tres" id="7_8xp80"]
+[ext_resource type="Resource" uid="uid://beimx73242a5m" path="res://resources/ingredients/ingredient_3.tres" id="8_sp04v"]
+[ext_resource type="Resource" uid="uid://ulfteikt4gvi" path="res://resources/ingredients/ingredient_4.tres" id="9_ihbck"]
+[ext_resource type="Resource" uid="uid://u02sql5vxyny" path="res://resources/ingredients/ingredient_5.tres" id="10_vnsdt"]
+[ext_resource type="Resource" uid="uid://b28npxny0kv40" path="res://resources/ingredients/ingredient_6.tres" id="11_ikqpi"]
+[ext_resource type="Resource" uid="uid://b1thqidbfiwke" path="res://resources/ingredients/ingredient_7.tres" id="12_5luka"]
 
 [node name="MainGame" type="Node2D" unique_id=126495794]
 script = ExtResource("1_d2op2")
@@ -16,3 +25,8 @@ texture = ExtResource("1_o5qli")
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=1325957341 instance=ExtResource("2_72e8q")]
 visible = false
 show_quit_to_menu_button = true
+
+[node name="DrinkManager" type="Node" parent="." unique_id=1596246571]
+script = ExtResource("4_0rdsr")
+ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_wjob3"), ExtResource("7_8xp80"), ExtResource("8_sp04v"), ExtResource("9_ihbck"), ExtResource("10_vnsdt"), ExtResource("11_ikqpi"), ExtResource("12_5luka")])
+metadata/_custom_type_script = "uid://e41oj3gjwnb7"

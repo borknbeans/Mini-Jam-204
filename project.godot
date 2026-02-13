@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/godot_vim/plugin.cfg")
 
 folder_colors={
 "res://audio/": "purple",
+"res://resources/": "red",
 "res://scenes/": "green",
 "res://scripts/": "yellow",
 "res://shaders/": "orange",
