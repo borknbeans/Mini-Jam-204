@@ -29,10 +29,6 @@ Audio="*uid://w03vm4qbat8h"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_vim/plugin.cfg")
-
 [file_customization]
 
 folder_colors={
