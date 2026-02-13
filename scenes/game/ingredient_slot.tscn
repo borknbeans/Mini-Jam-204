@@ -1,14 +1,30 @@
 [gd_scene format=3 uid="uid://co5kdkfssw80f"]
 
 [ext_resource type="Script" uid="uid://b17pxi0ltp083" path="res://scenes/game/ingredient_slot.gd" id="1_nmbdh"]
+[ext_resource type="Script" uid="uid://bjrbbfhryxvmj" path="res://scenes/game/texture_panel.gd" id="2_3lxov"]
 
 [node name="IngredientSlot" type="Panel" unique_id=999976015]
-offset_right = 64.0
-offset_bottom = 64.0
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 72.0
+offset_bottom = 72.0
 script = ExtResource("1_nmbdh")
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1212656305]
+[node name="TexturePanel" type="Panel" parent="." unique_id=1377999685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_3lxov")
+
+[node name="TextureRect" type="TextureRect" parent="TexturePanel" unique_id=1212656305]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
