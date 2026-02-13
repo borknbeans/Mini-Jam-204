@@ -3,6 +3,9 @@ extends Panel
 # Texture used to display dragged item on cursor
 @onready var dragging_texture: TextureRect = $"../DraggingTexture"
 
+# Component which contains recipe ingredient slots
+@onready var recipe_slot_container: HBoxContainer = $RecipeSection/MarginContainer/HBoxContainer
+
 # The slot we are dragging from
 var drag_from_slot: IngredientSlot = null
 
@@ -11,6 +14,15 @@ var dragging_ingredient: Ingredient = null
 
 # Slot which should be drawn as highlighted
 var highlighted_slot: IngredientSlot = null
+
+func get_current_recipe() -> Recipe:
+	var recipe: Recipe = Recipe.new()
+	
+	var ingredient_slots = recipe_slot_container.get_children()
+	for ingredient_slot: IngredientSlot in ingredient_slots:
+		recipe.add_ingredient(ingredient_slot.ingredient, ingredient_slot.count)
+	
+	return recipe
 
 func _process(delta: float) -> void:
 	if dragging_ingredient:
