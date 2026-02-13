@@ -72,6 +72,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
+[node name="DraggingTexture" type="TextureRect" parent="CanvasLayer" unique_id=1330302650]
+visible = false
+modulate = Color(1, 1, 1, 0.78431374)
+top_level = true
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
 [connection signal="drag_end" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_end"]
 [connection signal="drag_start" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_start"]
 [connection signal="drag_step" from="CanvasLayer/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/RecipeSection" method="_on_ingredient_slot_drag_step"]
