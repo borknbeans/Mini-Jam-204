@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://bthb3ojkf5lh1"]
+
+[ext_resource type="Texture2D" uid="uid://cguoyiu2du3ce" path="res://textures/ingredients/black_hole.png" id="1_p1eat"]
+[ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="2_s5x16"]
+
+[resource]
+script = ExtResource("2_s5x16")
+name = "Black Hole"
+icon = ExtResource("1_p1eat")
+metadata/_custom_type_script = "uid://bjb13rdhhkgia"

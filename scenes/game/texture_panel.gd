@@ -15,14 +15,14 @@ func set_highlight(is_highlighted: bool) -> void:
 	else:
 		remove_theme_stylebox_override("panel")
 
+func set_clear() -> void:
+	material.set_shader_parameter("current_state", 0.0)
+
 func set_correct() -> void:
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color.WEB_GREEN  # keep original look
-	
-	add_theme_stylebox_override("panel", style)
+	material.set_shader_parameter("current_state", 1.0)
 
 func set_wrong_spot() -> void:
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color.YELLOW  # keep original look
-	
-	add_theme_stylebox_override("panel", style)
+	material.set_shader_parameter("current_state", 2.0)
+
+func set_not_used() -> void:
+	material.set_shader_parameter("current_state", 3.0)

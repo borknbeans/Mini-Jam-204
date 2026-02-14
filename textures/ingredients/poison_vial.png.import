@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2wvaanthqjta"
-path="res://.godot/imported/unstable-matter.png-89b46e09abcb02a5519c40c227479347.ctex"
+uid="uid://bjghmqypvqiso"
+path="res://.godot/imported/poison_vial.png-5c3743aa9237b4806ef84d781db458f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ingredients/unstable-matter.png"
-dest_files=["res://.godot/imported/unstable-matter.png-89b46e09abcb02a5519c40c227479347.ctex"]
+source_file="res://textures/ingredients/poison_vial.png"
+dest_files=["res://.godot/imported/poison_vial.png-5c3743aa9237b4806ef84d781db458f9.ctex"]
 
 [params]
 

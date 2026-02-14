@@ -5,16 +5,8 @@
 [ext_resource type="Script" uid="uid://e41oj3gjwnb7" path="res://scripts/drink_manager.gd" id="4_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://bym8w1oi7buob" path="res://scenes/game/chef_section.tscn" id="4_wjob3"]
 [ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="5_o6v7o"]
-[ext_resource type="Resource" uid="uid://duqvscwadesm8" path="res://resources/ingredients/cockroach.tres" id="6_sp04v"]
-[ext_resource type="Resource" uid="uid://bpp6d204eiwi6" path="res://resources/ingredients/ingredient_1.tres" id="6_wjob3"]
-[ext_resource type="Resource" uid="uid://y5up24341v1x" path="res://resources/ingredients/ingredient_2.tres" id="7_8xp80"]
-[ext_resource type="Resource" uid="uid://beimx73242a5m" path="res://resources/ingredients/ingredient_3.tres" id="8_sp04v"]
-[ext_resource type="Resource" uid="uid://ulfteikt4gvi" path="res://resources/ingredients/ingredient_4.tres" id="9_ihbck"]
-[ext_resource type="Resource" uid="uid://u02sql5vxyny" path="res://resources/ingredients/ingredient_5.tres" id="10_vnsdt"]
-[ext_resource type="Resource" uid="uid://b28npxny0kv40" path="res://resources/ingredients/ingredient_6.tres" id="11_ikqpi"]
-[ext_resource type="Resource" uid="uid://b1thqidbfiwke" path="res://resources/ingredients/ingredient_7.tres" id="12_5luka"]
-[ext_resource type="Resource" uid="uid://bsbixwupskt5s" path="res://resources/ingredients/milk.tres" id="14_ihbck"]
-[ext_resource type="Resource" uid="uid://buwevkui3qjdx" path="res://resources/ingredients/unstable_matter.tres" id="15_vnsdt"]
+[ext_resource type="Resource" uid="uid://bvd3oc40mgllp" path="res://resources/ingredients/eyeball.tres" id="6_wi4c7"]
+[ext_resource type="Resource" uid="uid://tsn5dkq6vchp" path="res://resources/ingredients/jello_cube.tres" id="7_70vka"]
 
 [node name="MainGame" type="Node2D" unique_id=126495794]
 script = ExtResource("1_d2op2")
@@ -35,7 +27,7 @@ grow_vertical = 1
 
 [node name="DrinkManager" type="Node" parent="." unique_id=1596246571]
 script = ExtResource("4_0rdsr")
-ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_sp04v"), ExtResource("6_wjob3"), ExtResource("7_8xp80"), ExtResource("8_sp04v"), ExtResource("9_ihbck"), ExtResource("10_vnsdt"), ExtResource("11_ikqpi"), ExtResource("12_5luka"), ExtResource("14_ihbck"), ExtResource("15_vnsdt")])
+ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_wi4c7"), ExtResource("7_70vka")])
 metadata/_custom_type_script = "uid://e41oj3gjwnb7"
 
 [connection signal="recipe_submitted" from="CanvasLayer/ChefSection" to="DrinkManager" method="_on_drink_recipe_submitted"]

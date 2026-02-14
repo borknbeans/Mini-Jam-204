@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pujvjejds24"
-path="res://.godot/imported/3.png-5bb5c71295fbbae923a7a37ddd26ae53.ctex"
+uid="uid://b0uw25et5106f"
+path="res://.godot/imported/anise.png-72d119ef4a96479beffe7c8e95cba45f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ingredients/3.png"
-dest_files=["res://.godot/imported/3.png-5bb5c71295fbbae923a7a37ddd26ae53.ctex"]
+source_file="res://textures/ingredients/anise.png"
+dest_files=["res://.godot/imported/anise.png-72d119ef4a96479beffe7c8e95cba45f.ctex"]
 
 [params]
 

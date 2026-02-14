@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpel677viyk7x"
-path="res://.godot/imported/7.png-2c039f6bdfd950405fbc4f6026a2582c.ctex"
+uid="uid://dax5ur4faec6"
+path="res://.godot/imported/jello_cube.png-218f1aa0994c57d86bb61c51925ffdff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ingredients/7.png"
-dest_files=["res://.godot/imported/7.png-2c039f6bdfd950405fbc4f6026a2582c.ctex"]
+source_file="res://textures/ingredients/jello_cube.png"
+dest_files=["res://.godot/imported/jello_cube.png-218f1aa0994c57d86bb61c51925ffdff.ctex"]
 
 [params]
 

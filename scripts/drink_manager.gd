@@ -44,7 +44,7 @@ func generate_recipe(size: int) -> Recipe:
 	for i in range(size):
 		var idx = randf_range(0, ingredients.size())
 		var ingredient: Ingredient = ingredients.get(idx)
-		var count = randi_range(1, 4)
+		var count = randi_range(1, 3)
 		
 		recipe.add_ingredient(ingredient, count)
 	

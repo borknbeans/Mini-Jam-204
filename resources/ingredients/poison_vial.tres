@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dqmy8ey4y64m8"]
+
+[ext_resource type="Texture2D" uid="uid://bjghmqypvqiso" path="res://textures/ingredients/poison_vial.png" id="1_fp8u7"]
+[ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="2_tiliq"]
+
+[resource]
+script = ExtResource("2_tiliq")
+name = "Poison Vial"
+icon = ExtResource("1_fp8u7")
+metadata/_custom_type_script = "uid://bjb13rdhhkgia"

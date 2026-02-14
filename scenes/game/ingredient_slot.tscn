@@ -3,6 +3,52 @@
 [ext_resource type="Script" uid="uid://b17pxi0ltp083" path="res://scenes/game/ingredient_slot.gd" id="1_nmbdh"]
 [ext_resource type="Script" uid="uid://bjrbbfhryxvmj" path="res://scenes/game/texture_panel.gd" id="2_3lxov"]
 [ext_resource type="Script" uid="uid://cx2hon2v6hyxy" path="res://scenes/game/count_selection.gd" id="3_iebou"]
+[ext_resource type="Shader" uid="uid://c3edtrsvy1irp" path="res://shaders/color_changing_shader.gdshader" id="5_68c3y"]
+
+[sub_resource type="Shader" id="Shader_ehs4j"]
+code = "shader_type canvas_item;
+
+const int STATE_NOTHING = 0;
+const int STATE_CORRECT = 1;
+const int STATE_PARTIAL = 2;
+const int STATE_NOT_USED = 3;
+
+uniform int current_state;
+
+uniform vec4 grey_color : source_color = vec4(0.188, 0.202, 0.212, 1.0);
+uniform vec4 yellow_color : source_color = vec4(0.578, 0.468, 0.087, 1.0);
+uniform vec4 green_color : source_color = vec4(0.13, 0.397, 0.15, 1.0);
+
+void fragment() {
+	if (current_state == STATE_NOTHING) {
+		// Do nothing
+	} else if (current_state == STATE_CORRECT) {
+		COLOR.rgb = green_color.rgb;
+		COLOR.a = green_color.a;
+	} else if (current_state == STATE_PARTIAL) {
+		COLOR.rgb = yellow_color.rgb;
+		COLOR.a = yellow_color.a;
+	} else if (current_state == STATE_NOT_USED) {
+		COLOR.rgb = grey_color.rgb;
+		COLOR.a = grey_color.a;
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1t52"]
+resource_local_to_scene = true
+shader = SubResource("Shader_ehs4j")
+shader_parameter/current_state = 0
+shader_parameter/grey_color = Color(0.188, 0.202, 0.212, 1)
+shader_parameter/yellow_color = Color(0.578, 0.468, 0.087, 1)
+shader_parameter/green_color = Color(0.13, 0.397, 0.15, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6weu"]
+shader = ExtResource("5_68c3y")
+shader_parameter/current_state = 0
+shader_parameter/grey_color = Color(0.188, 0.202, 0.212, 1)
+shader_parameter/yellow_color = Color(0.578, 0.468, 0.087, 1)
+shader_parameter/green_color = Color(0.13, 0.397, 0.15, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_3lxov"]
 
@@ -14,6 +60,7 @@ script = ExtResource("1_nmbdh")
 metadata/_edit_group_ = true
 
 [node name="TexturePanel" type="Panel" parent="." unique_id=1377999685]
+material = SubResource("ShaderMaterial_p1t52")
 layout_mode = 1
 offset_left = 4.0
 offset_top = 4.0
@@ -29,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 2
 
 [node name="CountSelection" type="VBoxContainer" parent="." unique_id=1791884468]
 layout_mode = 1
@@ -43,6 +91,7 @@ theme_override_constants/separation = 1
 script = ExtResource("3_iebou")
 
 [node name="Button3" type="Button" parent="CountSelection" unique_id=1392726091]
+material = SubResource("ShaderMaterial_q6weu")
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
 toggle_mode = true
