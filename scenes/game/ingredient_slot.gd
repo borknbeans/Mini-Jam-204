@@ -2,8 +2,9 @@ class_name IngredientSlot extends Panel
 
 @onready var texture_panel: IngredientTexturePanel = $TexturePanel
 @onready var texture_rect: TextureRect = $TexturePanel/TextureRect
+@onready var count_selection: VBoxContainer = $CountSelection
 @export var ingredient: Ingredient
-@export var count: int = 0
+@export var count: int = 1
 @export var is_static: bool = false
 
 signal drag_start(drag_from: IngredientSlot)
@@ -18,9 +19,19 @@ func update_ingredient() -> void:
 		
 func set_highlight(is_highlighted: bool) -> void:
 	texture_panel.set_highlight(is_highlighted)
-		
+	
 func _ready() -> void:
+	if is_static:
+		count_selection.visible = false
+		
+	# Connect button group signal
+	var count_button: BaseButton = count_selection.get_child(0)
+	count_button.button_group.connect("pressed", _on_count_changed)
+		
 	update_ingredient()
+	
+func _on_count_changed(button: BaseButton) -> void:
+	count = int(button.text)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	drag_start.emit(self)
@@ -38,5 +49,4 @@ func set_ingredient(new_ingredient: Ingredient) -> void:
 		return
 		
 	ingredient = new_ingredient
-	count = 1 if ingredient else 0
 	update_ingredient()

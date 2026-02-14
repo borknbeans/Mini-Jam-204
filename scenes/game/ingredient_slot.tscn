@@ -2,25 +2,23 @@
 
 [ext_resource type="Script" uid="uid://b17pxi0ltp083" path="res://scenes/game/ingredient_slot.gd" id="1_nmbdh"]
 [ext_resource type="Script" uid="uid://bjrbbfhryxvmj" path="res://scenes/game/texture_panel.gd" id="2_3lxov"]
+[ext_resource type="Script" uid="uid://cx2hon2v6hyxy" path="res://scenes/game/count_selection.gd" id="3_iebou"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_3lxov"]
 
 [node name="IngredientSlot" type="Panel" unique_id=999976015]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 72.0
+offset_right = 104.0
 offset_bottom = 72.0
 script = ExtResource("1_nmbdh")
 metadata/_edit_group_ = true
 
 [node name="TexturePanel" type="Panel" parent="." unique_id=1377999685]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 68.0
+offset_bottom = 68.0
 mouse_filter = 1
 script = ExtResource("2_3lxov")
 
@@ -31,3 +29,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CountSelection" type="VBoxContainer" parent="." unique_id=1791884468]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = 4.0
+offset_bottom = 68.0
+grow_horizontal = 0
+theme_override_constants/separation = 1
+script = ExtResource("3_iebou")
+
+[node name="Button3" type="Button" parent="CountSelection" unique_id=1392726091]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3lxov")
+text = "3"
+
+[node name="Button2" type="Button" parent="CountSelection" unique_id=294409840]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3lxov")
+text = "2"
+
+[node name="Button1" type="Button" parent="CountSelection" unique_id=1945368083]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_3lxov")
+text = "1"

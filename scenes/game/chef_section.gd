@@ -108,6 +108,13 @@ func reset() -> void:
 	dragging_texture.texture = null
 	dragging_texture.visible = false
 	
+	print("\n---")
+	for value in get_current_recipe().values:
+		if value.ingredient:
+			print(value.ingredient.name, ", ", value.count)
+		else:
+			print("empty!")
+	
 func return_item_to_original_slot() -> void:
 	drag_from_slot.set_ingredient(dragging_ingredient)
 	reset()
