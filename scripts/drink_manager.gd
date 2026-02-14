@@ -50,6 +50,11 @@ func generate_recipe(size: int) -> Recipe:
 	
 	return recipe
 
+func set_new_recipe(size: int) -> void:
+	current_hidden_recipe = generate_recipe(size)
+	print("Customers recipe:")
+	current_hidden_recipe.debug_print()
+
 func _on_drink_recipe_submitted(submitted_recipe: Recipe) -> void:
 	var result: Array = current_hidden_recipe.check_valid_solution(submitted_recipe)
 	recipe_result.emit(result)

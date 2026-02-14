@@ -14,3 +14,15 @@ func set_highlight(is_highlighted: bool) -> void:
 		add_theme_stylebox_override("panel", style)
 	else:
 		remove_theme_stylebox_override("panel")
+
+func set_correct() -> void:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color.WEB_GREEN  # keep original look
+	
+	add_theme_stylebox_override("panel", style)
+
+func set_wrong_spot() -> void:
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color.YELLOW  # keep original look
+	
+	add_theme_stylebox_override("panel", style)

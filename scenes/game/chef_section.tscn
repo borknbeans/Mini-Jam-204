@@ -9,6 +9,9 @@
 [ext_resource type="Resource" uid="uid://u02sql5vxyny" path="res://resources/ingredients/ingredient_5.tres" id="7_5n1m8"]
 [ext_resource type="Resource" uid="uid://b28npxny0kv40" path="res://resources/ingredients/ingredient_6.tres" id="8_3ew06"]
 [ext_resource type="Resource" uid="uid://b1thqidbfiwke" path="res://resources/ingredients/ingredient_7.tres" id="9_2tlj6"]
+[ext_resource type="Resource" uid="uid://duqvscwadesm8" path="res://resources/ingredients/cockroach.tres" id="10_8tjq4"]
+[ext_resource type="Resource" uid="uid://bsbixwupskt5s" path="res://resources/ingredients/milk.tres" id="11_55eni"]
+[ext_resource type="Resource" uid="uid://buwevkui3qjdx" path="res://resources/ingredients/unstable_matter.tres" id="12_sc3y0"]
 
 [node name="ChefSection" type="Panel" unique_id=907053446 node_paths=PackedStringArray("dragging_texture")]
 self_modulate = Color(1, 1, 1, 0.19607843)
@@ -101,16 +104,19 @@ is_static = true
 [node name="IngredientSlot8" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1564083514 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
+ingredient = ExtResource("10_8tjq4")
 is_static = true
 
 [node name="IngredientSlot9" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1676103920 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
+ingredient = ExtResource("11_55eni")
 is_static = true
 
 [node name="IngredientSlot10" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=129189429 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
+ingredient = ExtResource("12_sc3y0")
 is_static = true
 
 [node name="IngredientSlot11" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1978187448 instance=ExtResource("2_fisco")]

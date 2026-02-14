@@ -111,12 +111,12 @@ func reset() -> void:
 	dragging_texture.texture = null
 	dragging_texture.visible = false
 	
-	print("\n---")
-	for value in get_current_recipe().values:
-		if value.ingredient:
-			print(value.ingredient.name, ", ", value.count)
-		else:
-			print("empty!")
+	#print("\n---")
+	#for value in get_current_recipe().values:
+		#if value.ingredient:
+			#print(value.ingredient.name, ", ", value.count)
+		#else:
+			#print("empty!")
 
 func return_item_to_original_slot() -> void:
 	drag_from_slot.set_ingredient(dragging_ingredient)
@@ -144,5 +144,16 @@ func _has_valid_recipe() -> bool:
 
 func _on_drink_manager_recipe_result(result: Array) -> void:
 	# TODO: Handle whenever we get a recipe result back!
+	var ingredient_slots = recipe_slot_container.get_children()
 	for i in range(result.size()):
-		print(i, ": ", result[i].ingredient_status, " - ", result[i].count_status)
+		var ingredient_slot: IngredientSlot = ingredient_slots[i]
+		var slot_result = result[i]
+		
+		if slot_result.ingredient_status == Recipe.IngredientStatus.CORRECT:
+			ingredient_slot.texture_panel.set_correct()
+		elif slot_result.ingredient_status == Recipe.IngredientStatus.WRONG_POSITION:
+			ingredient_slot.texture_panel.set_wrong_spot()
+		else:
+			ingredient_slot.texture_panel.set_highlight(false)
+		
+		await get_tree().create_timer(0.2).timeout # Slowly reveal
