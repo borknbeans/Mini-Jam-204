@@ -1,12 +1,22 @@
 @tool
 class_name DrinkManager extends Node
 
+signal recipe_result(result: Array)
+
 const ingredients_path: String = "res://resources/ingredients/"
 
 @export var ingredients: Array[Ingredient]
 
+var current_hidden_recipe: Recipe
+
 func _ready() -> void:
 	ingredients = _load_ingredients(ingredients_path)
+
+func _process(_delta: float) -> void:
+	if not Engine.is_editor_hint(): # Only run this when the game is going - not in the editor
+		if Input.is_action_just_pressed("debug_new_recipe"):
+			current_hidden_recipe = generate_recipe(5)
+			current_hidden_recipe.debug_print()
 
 func _load_ingredients(path: String) -> Array[Ingredient]:
 	var rv: Array[Ingredient] = []
@@ -31,17 +41,15 @@ func _load_ingredients(path: String) -> Array[Ingredient]:
 func generate_recipe(size: int) -> Recipe:
 	var recipe: Recipe = Recipe.new()
 	
-	var ingredients_copy: Array[Ingredient] = ingredients.duplicate()
-	
 	for i in range(size):
-		if ingredients_copy.size() == 0:
-			push_warning("Not enough ingredients to create a recipe of size " + str(size))
-			break
-		
-		var idx = randf_range(0, ingredients_copy.size())
-		var ingredient: Ingredient = ingredients_copy.pop_at(idx)
+		var idx = randf_range(0, ingredients.size())
+		var ingredient: Ingredient = ingredients.get(idx)
 		var count = randi_range(1, 4)
 		
 		recipe.add_ingredient(ingredient, count)
 	
 	return recipe
+
+func _on_drink_recipe_submitted(submitted_recipe: Recipe) -> void:
+	var result: Array = current_hidden_recipe.check_valid_solution(submitted_recipe)
+	recipe_result.emit(result)

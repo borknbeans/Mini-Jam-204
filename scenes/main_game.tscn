@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dqc5etqao77qp"]
 
 [ext_resource type="Script" uid="uid://xhx1kfvdtoiy" path="res://scripts/main_game.gd" id="1_d2op2"]
-[ext_resource type="Texture2D" uid="uid://dvddv74p8wmng" path="res://textures/icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c2qghk8ky651o" path="res://scenes/ui/settings_menu.tscn" id="2_72e8q"]
 [ext_resource type="Script" uid="uid://e41oj3gjwnb7" path="res://scripts/drink_manager.gd" id="4_0rdsr"]
+[ext_resource type="PackedScene" uid="uid://bym8w1oi7buob" path="res://scenes/game/chef_section.tscn" id="4_wjob3"]
 [ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="5_o6v7o"]
 [ext_resource type="Resource" uid="uid://bpp6d204eiwi6" path="res://resources/ingredients/ingredient_1.tres" id="6_wjob3"]
 [ext_resource type="Resource" uid="uid://y5up24341v1x" path="res://resources/ingredients/ingredient_2.tres" id="7_8xp80"]
@@ -16,17 +16,24 @@
 [node name="MainGame" type="Node2D" unique_id=126495794]
 script = ExtResource("1_d2op2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2115478363]
-position = Vector2(640, 360)
-texture = ExtResource("1_o5qli")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=541867085]
 
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=1325957341 instance=ExtResource("2_72e8q")]
 visible = false
 show_quit_to_menu_button = true
 
+[node name="ChefSection" parent="CanvasLayer" unique_id=907053446 instance=ExtResource("4_wjob3")]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 400.0
+grow_vertical = 1
+
 [node name="DrinkManager" type="Node" parent="." unique_id=1596246571]
 script = ExtResource("4_0rdsr")
 ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_wjob3"), ExtResource("7_8xp80"), ExtResource("8_sp04v"), ExtResource("9_ihbck"), ExtResource("10_vnsdt"), ExtResource("11_ikqpi"), ExtResource("12_5luka")])
 metadata/_custom_type_script = "uid://e41oj3gjwnb7"
+
+[connection signal="recipe_submitted" from="CanvasLayer/ChefSection" to="DrinkManager" method="_on_drink_recipe_submitted"]
+[connection signal="recipe_result" from="DrinkManager" to="CanvasLayer/ChefSection" method="_on_drink_manager_recipe_result"]

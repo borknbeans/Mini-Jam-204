@@ -10,19 +10,7 @@
 [ext_resource type="Resource" uid="uid://b28npxny0kv40" path="res://resources/ingredients/ingredient_6.tres" id="8_3ew06"]
 [ext_resource type="Resource" uid="uid://b1thqidbfiwke" path="res://resources/ingredients/ingredient_7.tres" id="9_2tlj6"]
 
-[node name="Control" type="Control" unique_id=334321247]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1531941861]
-
-[node name="ChefSection" type="Panel" parent="CanvasLayer" unique_id=907053446]
+[node name="ChefSection" type="Panel" unique_id=907053446 node_paths=PackedStringArray("dragging_texture")]
 self_modulate = Color(1, 1, 1, 0.19607843)
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,14 +18,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -400.0
-offset_top = -200.0
+offset_top = -204.0
 offset_right = 400.0
-offset_bottom = 200.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_17vxs")
+dragging_texture = NodePath("DraggingTexture")
+metadata/_edit_group_ = true
 
-[node name="IngredientsSection" type="Panel" parent="CanvasLayer/ChefSection" unique_id=312284624]
+[node name="IngredientsSection" type="Panel" parent="." unique_id=312284624]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -48,7 +38,7 @@ offset_bottom = 152.0
 grow_horizontal = 2
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ChefSection/IngredientsSection" unique_id=75047009]
+[node name="MarginContainer" type="MarginContainer" parent="IngredientsSection" unique_id=75047009]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,80 +50,80 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer" unique_id=247436507]
+[node name="GridContainer" type="GridContainer" parent="IngredientsSection/MarginContainer" unique_id=247436507]
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
 
-[node name="IngredientSlot1" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=999976015 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot1" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=999976015 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("3_y4o5h")
 is_static = true
 
-[node name="IngredientSlot2" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=798929907 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot2" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=798929907 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("4_8tjq4")
 is_static = true
 
-[node name="IngredientSlot3" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1441774398 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot3" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1441774398 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("5_55eni")
 is_static = true
 
-[node name="IngredientSlot4" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1521670666 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot4" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1521670666 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("6_sc3y0")
 is_static = true
 
-[node name="IngredientSlot5" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=61716137 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot5" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=61716137 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("7_5n1m8")
 is_static = true
 
-[node name="IngredientSlot6" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=231029502 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot6" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=231029502 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("8_3ew06")
 is_static = true
 
-[node name="IngredientSlot7" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1787095960 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot7" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1787095960 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 ingredient = ExtResource("9_2tlj6")
 is_static = true
 
-[node name="IngredientSlot8" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1564083514 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot8" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1564083514 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="IngredientSlot9" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1676103920 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot9" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1676103920 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="IngredientSlot10" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=129189429 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot10" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=129189429 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="IngredientSlot11" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=1978187448 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot11" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=1978187448 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="IngredientSlot12" parent="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer" unique_id=2075868114 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot12" parent="IngredientsSection/MarginContainer/GridContainer" unique_id=2075868114 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="RecipeSection" type="Panel" parent="CanvasLayer/ChefSection" unique_id=1693152106]
+[node name="RecipeSection" type="Panel" parent="." unique_id=1693152106]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -147,7 +137,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ChefSection/RecipeSection" unique_id=294285117]
+[node name="MarginContainer" type="MarginContainer" parent="RecipeSection" unique_id=294285117]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -159,31 +149,31 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer" unique_id=180208451]
+[node name="HBoxContainer" type="HBoxContainer" parent="RecipeSection/MarginContainer" unique_id=180208451]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="IngredientSlot1" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer" unique_id=803735502 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot1" parent="RecipeSection/MarginContainer/HBoxContainer" unique_id=803735502 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(104, 72)
 layout_mode = 2
 
-[node name="IngredientSlot2" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer" unique_id=2202082 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot2" parent="RecipeSection/MarginContainer/HBoxContainer" unique_id=2202082 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(104, 72)
 layout_mode = 2
 
-[node name="IngredientSlot3" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer" unique_id=1640110097 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot3" parent="RecipeSection/MarginContainer/HBoxContainer" unique_id=1640110097 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(104, 72)
 layout_mode = 2
 
-[node name="IngredientSlot4" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer" unique_id=327632551 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot4" parent="RecipeSection/MarginContainer/HBoxContainer" unique_id=327632551 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(104, 72)
 layout_mode = 2
 
-[node name="IngredientSlot5" parent="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer" unique_id=878826187 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot5" parent="RecipeSection/MarginContainer/HBoxContainer" unique_id=878826187 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(104, 72)
 layout_mode = 2
 
-[node name="TrashSection" type="Panel" parent="CanvasLayer/ChefSection" unique_id=1926485858]
+[node name="TrashSection" type="Panel" parent="." unique_id=1926485858]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -193,7 +183,7 @@ offset_right = 80.0
 grow_vertical = 0
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ChefSection/TrashSection" unique_id=751627408]
+[node name="MarginContainer" type="MarginContainer" parent="TrashSection" unique_id=751627408]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,76 +195,103 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="IngredientSlot1" parent="CanvasLayer/ChefSection/TrashSection/MarginContainer" unique_id=886979613 instance=ExtResource("2_fisco")]
+[node name="IngredientSlot1" parent="TrashSection/MarginContainer" unique_id=886979613 instance=ExtResource("2_fisco")]
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="Label" type="Label" parent="CanvasLayer/ChefSection/TrashSection/MarginContainer" unique_id=1865489236]
+[node name="Label" type="Label" parent="TrashSection/MarginContainer" unique_id=1865489236]
 layout_mode = 2
 text = "Trash"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DraggingTexture" type="TextureRect" parent="CanvasLayer" unique_id=1330302650]
+[node name="DraggingTexture" type="TextureRect" parent="." unique_id=1330302650]
 visible = false
 modulate = Color(1, 1, 1, 0.78431374)
 top_level = true
+layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 mouse_filter = 2
 
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
-[connection signal="drag_end" from="CanvasLayer/ChefSection/TrashSection/MarginContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_end"]
-[connection signal="drag_start" from="CanvasLayer/ChefSection/TrashSection/MarginContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_start"]
-[connection signal="drag_step" from="CanvasLayer/ChefSection/TrashSection/MarginContainer/IngredientSlot1" to="CanvasLayer/ChefSection" method="_on_ingredient_slot_drag_step"]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1503590962]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SubmitButton" type="Button" parent="MarginContainer" unique_id=894265568]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "Try"
+
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot6" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot7" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot8" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot9" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot10" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot11" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="IngredientsSection/MarginContainer/GridContainer/IngredientSlot12" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot2" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot3" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot4" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="RecipeSection/MarginContainer/HBoxContainer/IngredientSlot5" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="drag_end" from="TrashSection/MarginContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_end"]
+[connection signal="drag_start" from="TrashSection/MarginContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_start"]
+[connection signal="drag_step" from="TrashSection/MarginContainer/IngredientSlot1" to="." method="_on_ingredient_slot_drag_step"]
+[connection signal="pressed" from="MarginContainer/SubmitButton" to="." method="_on_submit_button_pressed"]

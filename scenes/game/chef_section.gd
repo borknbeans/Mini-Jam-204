@@ -1,10 +1,13 @@
 extends Panel
 
+signal recipe_submitted(recipe: Recipe)
+
 # Texture used to display dragged item on cursor
-@onready var dragging_texture: TextureRect = $"../DraggingTexture"
+@export var dragging_texture: TextureRect
 
 # Component which contains recipe ingredient slots
 @onready var recipe_slot_container: HBoxContainer = $RecipeSection/MarginContainer/HBoxContainer
+@onready var submit_button: Button = %SubmitButton
 
 # The slot we are dragging from
 var drag_from_slot: IngredientSlot = null
@@ -31,13 +34,12 @@ func _process(delta: float) -> void:
 	dragging_texture.global_position = get_viewport().get_mouse_position() - dragging_texture.size * 0.5
 	
 	# Code for snapping the dragging texture to the nearest IngredientSlot
-	return
-	if not highlighted_slot or highlighted_slot.is_static:
-		dragging_texture.global_position = get_viewport().get_mouse_position() - dragging_texture.size * 0.5
-	else:
-		var highlight_center = highlighted_slot.global_position
-		highlight_center += highlighted_slot.size * 0.5
-		dragging_texture.global_position = highlight_center - dragging_texture.size * 0.5
+	#if not highlighted_slot or highlighted_slot.is_static:
+		#dragging_texture.global_position = get_viewport().get_mouse_position() - dragging_texture.size * 0.5
+	#else:
+		#var highlight_center = highlighted_slot.global_position
+		#highlight_center += highlighted_slot.size * 0.5
+		#dragging_texture.global_position = highlight_center - dragging_texture.size * 0.5
 
 # Drop ingredient on background component
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
@@ -94,9 +96,10 @@ func _on_ingredient_slot_drag_end(drag_from: IngredientSlot, drag_to: Ingredient
 		else:
 			drag_from.set_ingredient(drag_to.ingredient)
 			drag_to.set_ingredient(dragging_ingredient)
-		
-	reset()
 	
+	submit_button.disabled = !_has_valid_recipe()
+	reset()
+
 # Reset state after dragging is finished
 func reset() -> void:
 	if highlighted_slot:
@@ -114,13 +117,32 @@ func reset() -> void:
 			print(value.ingredient.name, ", ", value.count)
 		else:
 			print("empty!")
-	
+
 func return_item_to_original_slot() -> void:
 	drag_from_slot.set_ingredient(dragging_ingredient)
 	reset()
-		
+
+
 # Intercept drag end notification to check for unsuccessful drags
 func _notification(what: int) -> void:
 	if what == Node.NOTIFICATION_DRAG_END:
 		if not is_drag_successful():
 			return_item_to_original_slot()
+
+func _on_submit_button_pressed() -> void:
+	var current_recipe: Recipe = get_current_recipe()
+	recipe_submitted.emit(current_recipe)
+
+# Returns true if there is an ingredient in every slot
+func _has_valid_recipe() -> bool:
+	var ingredient_slots = recipe_slot_container.get_children()
+	for ingredient_slot: IngredientSlot in ingredient_slots:
+		if !ingredient_slot.ingredient:
+			return false
+	
+	return true
+
+func _on_drink_manager_recipe_result(result: Array) -> void:
+	# TODO: Handle whenever we get a recipe result back!
+	for i in range(result.size()):
+		print(i, ": ", result[i].ingredient_status, " - ", result[i].count_status)
