@@ -6,6 +6,7 @@ signal recipe_submitted(recipe: Recipe)
 @export var dragging_texture: TextureRect
 
 # Component which contains recipe ingredient slots
+@onready var ingredients_container: GridContainer = $IngredientsSection/MarginContainer/GridContainer
 @onready var recipe_slot_container: HBoxContainer = $RecipeSection/MarginContainer/HBoxContainer
 @onready var submit_button: Button = %SubmitButton
 
@@ -143,7 +144,6 @@ func _has_valid_recipe() -> bool:
 	return true
 
 func _on_drink_manager_recipe_result(result: Array) -> void:
-	# TODO: Handle whenever we get a recipe result back!
 	var ingredient_slots = recipe_slot_container.get_children()
 	for i in range(result.size()):
 		var ingredient_slot: IngredientSlot = ingredient_slots[i]
@@ -151,9 +151,23 @@ func _on_drink_manager_recipe_result(result: Array) -> void:
 		
 		if slot_result.ingredient_status == Recipe.IngredientStatus.CORRECT:
 			ingredient_slot.texture_panel.set_correct()
+			var source_slot = _find_ingredient_slot(ingredient_slot.ingredient)
+			source_slot.texture_panel.set_correct()
 		elif slot_result.ingredient_status == Recipe.IngredientStatus.WRONG_POSITION:
 			ingredient_slot.texture_panel.set_wrong_spot()
+			var source_slot = _find_ingredient_slot(ingredient_slot.ingredient)
+			source_slot.texture_panel.set_wrong_spot()
 		else:
-			ingredient_slot.texture_panel.set_highlight(false)
+			ingredient_slot.texture_panel.set_clear()
+			var source_slot = _find_ingredient_slot(ingredient_slot.ingredient)
+			source_slot.texture_panel.set_not_used()
 		
 		await get_tree().create_timer(0.2).timeout # Slowly reveal
+
+func _find_ingredient_slot(ingredient: Ingredient) -> IngredientSlot:
+	var ingredient_slots = ingredients_container.get_children()
+	for ingredient_slot in ingredient_slots:
+		if ingredient_slot.ingredient == ingredient:
+			return ingredient_slot
+	
+	return null

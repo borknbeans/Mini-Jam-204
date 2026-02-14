@@ -5,8 +5,12 @@
 [ext_resource type="Script" uid="uid://e41oj3gjwnb7" path="res://scripts/drink_manager.gd" id="4_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://bym8w1oi7buob" path="res://scenes/game/chef_section.tscn" id="4_wjob3"]
 [ext_resource type="Script" uid="uid://bjb13rdhhkgia" path="res://scripts/ingredient.gd" id="5_o6v7o"]
+[ext_resource type="Resource" uid="uid://bthb3ojkf5lh1" path="res://resources/ingredients/black_hole.tres" id="6_5cypo"]
 [ext_resource type="Resource" uid="uid://bvd3oc40mgllp" path="res://resources/ingredients/eyeball.tres" id="6_wi4c7"]
 [ext_resource type="Resource" uid="uid://tsn5dkq6vchp" path="res://resources/ingredients/jello_cube.tres" id="7_70vka"]
+[ext_resource type="Resource" uid="uid://dqmy8ey4y64m8" path="res://resources/ingredients/poison_vial.tres" id="10_o6v7o"]
+[ext_resource type="Resource" uid="uid://dix3gm2geeasm" path="res://resources/ingredients/star_of_anise.tres" id="11_wjob3"]
+[ext_resource type="Resource" uid="uid://bsbixwupskt5s" path="res://resources/ingredients/milk.tres" id="14_ihbck"]
 
 [node name="MainGame" type="Node2D" unique_id=126495794]
 script = ExtResource("1_d2op2")
@@ -27,7 +31,7 @@ grow_vertical = 1
 
 [node name="DrinkManager" type="Node" parent="." unique_id=1596246571]
 script = ExtResource("4_0rdsr")
-ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_wi4c7"), ExtResource("7_70vka")])
+ingredients = Array[ExtResource("5_o6v7o")]([ExtResource("6_5cypo"), ExtResource("6_wi4c7"), ExtResource("7_70vka"), ExtResource("14_ihbck"), ExtResource("10_o6v7o"), ExtResource("11_wjob3")])
 metadata/_custom_type_script = "uid://e41oj3gjwnb7"
 
 [connection signal="recipe_submitted" from="CanvasLayer/ChefSection" to="DrinkManager" method="_on_drink_recipe_submitted"]

@@ -22,7 +22,9 @@ func set_correct() -> void:
 	material.set_shader_parameter("current_state", 1.0)
 
 func set_wrong_spot() -> void:
-	material.set_shader_parameter("current_state", 2.0)
+	if material.get_shader_parameter("current_state") != 1.0:
+		material.set_shader_parameter("current_state", 2.0)
 
 func set_not_used() -> void:
-	material.set_shader_parameter("current_state", 3.0)
+	if material.get_shader_parameter("current_state") != 1.0:
+		material.set_shader_parameter("current_state", 3.0)

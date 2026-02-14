@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b17pxi0ltp083" path="res://scenes/game/ingredient_slot.gd" id="1_nmbdh"]
 [ext_resource type="Script" uid="uid://bjrbbfhryxvmj" path="res://scenes/game/texture_panel.gd" id="2_3lxov"]
+[ext_resource type="Material" uid="uid://dfytydsg401am" path="res://shaders/color_changing_shader.tres" id="2_p1t52"]
 [ext_resource type="Script" uid="uid://cx2hon2v6hyxy" path="res://scenes/game/count_selection.gd" id="3_iebou"]
 [ext_resource type="Shader" uid="uid://c3edtrsvy1irp" path="res://shaders/color_changing_shader.gdshader" id="5_68c3y"]
 
@@ -15,7 +16,7 @@ const int STATE_NOT_USED = 3;
 
 uniform int current_state;
 
-uniform vec4 grey_color : source_color = vec4(0.188, 0.202, 0.212, 1.0);
+uniform vec4 grey_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 uniform vec4 yellow_color : source_color = vec4(0.578, 0.468, 0.087, 1.0);
 uniform vec4 green_color : source_color = vec4(0.13, 0.397, 0.15, 1.0);
 
@@ -39,14 +40,14 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource("Shader_ehs4j")
 shader_parameter/current_state = 0
-shader_parameter/grey_color = Color(0.188, 0.202, 0.212, 1)
+shader_parameter/grey_color = Color(0, 0, 0, 1)
 shader_parameter/yellow_color = Color(0.578, 0.468, 0.087, 1)
 shader_parameter/green_color = Color(0.13, 0.397, 0.15, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6weu"]
 shader = ExtResource("5_68c3y")
 shader_parameter/current_state = 0
-shader_parameter/grey_color = Color(0.188, 0.202, 0.212, 1)
+shader_parameter/grey_color = Color(0, 0, 0, 1)
 shader_parameter/yellow_color = Color(0.578, 0.468, 0.087, 1)
 shader_parameter/green_color = Color(0.13, 0.397, 0.15, 1)
 
@@ -99,6 +100,7 @@ button_group = SubResource("ButtonGroup_3lxov")
 text = "3"
 
 [node name="Button2" type="Button" parent="CountSelection" unique_id=294409840]
+material = ExtResource("2_p1t52")
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
 toggle_mode = true
@@ -106,6 +108,7 @@ button_group = SubResource("ButtonGroup_3lxov")
 text = "2"
 
 [node name="Button1" type="Button" parent="CountSelection" unique_id=1945368083]
+material = ExtResource("2_p1t52")
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
 toggle_mode = true

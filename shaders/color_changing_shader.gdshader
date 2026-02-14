@@ -7,7 +7,7 @@ const int STATE_NOT_USED = 3;
 
 uniform int current_state;
 
-uniform vec4 grey_color : source_color = vec4(0.188, 0.202, 0.212, 1.0);
+uniform vec4 grey_color : source_color = vec4(0, 0, 0, 1.0);
 uniform vec4 yellow_color : source_color = vec4(0.578, 0.468, 0.087, 1.0);
 uniform vec4 green_color : source_color = vec4(0.13, 0.397, 0.15, 1.0);
 

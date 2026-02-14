@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bthb3ojkf5lh1" path="res://resources/ingredients/black_hole.tres" id="5_n0bd7"]
 [ext_resource type="Resource" uid="uid://dqmy8ey4y64m8" path="res://resources/ingredients/poison_vial.tres" id="7_5uwa0"]
 [ext_resource type="Resource" uid="uid://dix3gm2geeasm" path="res://resources/ingredients/star_of_anise.tres" id="8_adgsb"]
+[ext_resource type="Texture2D" uid="uid://crilyt8whcger" path="res://textures/trashcan.png" id="9_17vxs"]
 [ext_resource type="Resource" uid="uid://bsbixwupskt5s" path="res://resources/ingredients/milk.tres" id="11_55eni"]
 
 [node name="ChefSection" type="Panel" unique_id=907053446 node_paths=PackedStringArray("dragging_texture")]
@@ -198,11 +199,14 @@ custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
 is_static = true
 
-[node name="Label" type="Label" parent="TrashSection/MarginContainer" unique_id=1865489236]
-layout_mode = 2
-text = "Trash"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="TrashSection/MarginContainer/IngredientSlot1" unique_id=1527276790]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 68.0
+texture = ExtResource("9_17vxs")
+expand_mode = 3
 
 [node name="DraggingTexture" type="TextureRect" parent="." unique_id=1330302650]
 visible = false
